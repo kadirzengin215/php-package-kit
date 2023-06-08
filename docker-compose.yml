@@ -1,0 +1,17 @@
+version: '3'
+services:
+    app:
+        build:
+            context: ./.devcontainer/php/
+            dockerfile: Dockerfile
+            args:
+                APP_NAME: 'php-package-kit'
+        image: 'php-package-kit-app'
+        container_name: 'php-package-kit-app'
+        volumes:
+            - '.:/usr/src/php-package-kit'
+            - './.devcontainer/php/php.ini:/usr/local/etc/php/php.ini'
+            - './.devcontainer/php/conf.d/xdebug.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini'
+        extra_hosts:
+            - "host.docker.internal:host-gateway"
+        tty: true

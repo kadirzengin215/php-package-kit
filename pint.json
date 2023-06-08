@@ -1,0 +1,24 @@
+{
+  "preset": "psr12",
+  "rules": {
+    "header_comment": {
+      "header": "بِسْــــــــــــــــــمِ اﷲِالرَّحْمَنِ اارَّحِيم\n\nاللهم صل علي سيدنا محمد وعلى آل سيدنا محمد",
+      "comment_type": "PHPDoc",
+      "location": "after_open",
+      "separate": "bottom"
+    },
+    "declare_strict_types": true,
+    "ordered_class_elements": {
+      "order": ["use_trait", "case", "constant_public", "constant_protected", "constant_private", "property_public", "property_protected", "property_private", "construct", "phpunit", "method_public", "method_protected", "method_private", "magic", "destruct"]
+    },
+    "class_attributes_separation": {
+      "elements": {
+        "const": "one",
+        "method": "one",
+        "property": "one",
+        "trait_import": "none",
+        "case": "none"
+      }
+    }
+  }
+}
