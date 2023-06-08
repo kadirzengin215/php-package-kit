@@ -1,0 +1,55 @@
+// For format details, see https://aka.ms/devcontainer.json.
+{
+    "name": "PHP package kit",
+    "dockerComposeFile": [
+        "../docker-compose.yml"
+    ],
+    "service": "app",
+    "workspaceFolder": "/usr/src/php-package-kit",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "christian-kohler.path-intellisense",
+                "Codeium.codeium",
+                "eamodio.gitlens",
+                "ms-azuretools.vscode-docker",
+                "EditorConfig.EditorConfig",
+                "formulahendry.code-runner",
+                "bmewburn.vscode-intelephense-client",
+                "neilbrayfield.php-docblocker",
+                "MehediDracula.php-namespace-resolver",
+                "phproberto.vscode-php-getters-setters",
+                "phiter.phpstorm-snippets",
+                "recca0120.vscode-phpunit",
+                "DEVSENSE.composer-php-vscode",
+                "xdebug.php-debug",
+                "open-southeners.laravel-pint"
+            ],
+            "settings": {
+                "editor.formatOnSave": true,
+                "editor.formatOnPaste": true,
+                "php.validate.executablePath": "/usr/bin/php",
+                "[php]": {
+                    //"editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+                    "editor.defaultFormatter": "open-southeners.laravel-pint"
+                },
+                "launch": {
+                    "version": "0.2.0",
+                    "configurations": [
+                        {
+                            "name": "Listen for Xdebug",
+                            "type": "php",
+                            "request": "launch",
+                            "port": 9003,
+                            "pathMappings": {
+                                "/usr/src/php-package-kit": "${workspaceFolder}"
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "remoteUser": "php-package-kit",
+    "postCreateCommand": "chown -R 1000:1000 ."
+}
